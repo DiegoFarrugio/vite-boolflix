@@ -10,19 +10,22 @@ export default {
   data(){
     return{
         store,
-        
+        baseUrl: 'https://api.themoviedb.org/3/search/movie?api_key=8b8bfeb0be27781c70ec92fbd8ee8dba&query=avatar'
     }
   },
 
   methods: {
 
 
+
   },
 
   created(){
     axios.get(this.baseUrl).then((response) => {
-      console.log(response);
-      
+      console.log(this.baseUrl);
+
+      this.store.films = response.data.results;
+      console.log('array', this.store.films);
     });
   },
 
