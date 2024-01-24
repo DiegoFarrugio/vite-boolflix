@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
   data(){
     return{
@@ -13,6 +15,16 @@ export default {
 
 
 <template>
+  <header>
+    <div>
+      <form action="">
+        <input type="text" placeholder="Inserisci nome">
+
+        <button type="submit" class="btn btn-primary ms-3">Cerca</button>
+      </form>
+    </div>
+</header>
+
 
 </template>
 
@@ -20,4 +32,8 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/header.scss" as *;
+
+textarea{
+    width: 15%
+  }
 </style>
