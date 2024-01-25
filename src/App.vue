@@ -30,10 +30,23 @@ export default {
           }
         })
         .then((response) => {
-          console.log(response.data.results);
+          console.log('array film' , response.data.results);
           this.store.movies = response.data.results;
         });
-    }
+
+
+        axios
+        .get('https://api.themoviedb.org/3/search/tv', {
+          params: {
+            api_key: '8b8bfeb0be27781c70ec92fbd8ee8dba',
+            query: this.store.searchText
+          }
+        })
+        .then((response) => {
+          console.log('array serie tv', response.data.results);
+          this.store.series = response.data.results;
+        });
+    },
 
   },
 
