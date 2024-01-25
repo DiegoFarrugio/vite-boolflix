@@ -9,36 +9,23 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+
+
+}
 }
 </script>
 
 
-
 <template>
-  <header>
+
+<header>
     <div>
-      <form action="">
-        <input type="text" placeholder="Inserisci nome">
+        <input v-model="store.searchText" type="text" placeholder="Inserisci nome">
 
-        <button type="submit" class="btn btn-primary ms-3">Cerca</button>
-      </form>
+        <button @click="$emit('performSearch')">Cerca</button>
     </div>
-
-
-    <div>
-      <ul v-for="(film, i) in store.films">
-        <li>{{film.title}}</li>
-
-        <li>{{film.original_title }}</li>
-
-        <li>{{film.original_language}}</li>
-
-        <li>{{film.vote_average }}</li>
-      </ul>
-    </div>
-</header>
-
+  </header>
 
 </template>
 

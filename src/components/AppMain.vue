@@ -16,6 +16,24 @@ export default {
 
 <template>
 
+<main>
+
+<div>
+  <ul>
+    <li v-for="(movie, i) in store.movies" :key="i">
+      <hr>
+
+  
+        <div>Title : {{movie.title}}</div>
+        <div>Original title : {{ movie.original_title }}</div>
+        <div>Original language : {{ movie.original_language }}</div>
+        <div>Vote average : {{ movie.vote_average }}</div>
+      
+    </li>
+  </ul>
+</div>
+
+</main>
 
 </template>
 
