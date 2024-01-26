@@ -30,7 +30,11 @@ export default {
       }
 
       return finalLink;
-    }
+    },
+
+    //voteFilmSeries(){
+      //return Math.ceil(this.voteAverage / 2);
+    //}
   },
 }
 </script>
@@ -63,12 +67,17 @@ export default {
       </div>
     
       <div>
-        Vote average : {{ movie.vote_average }}
+        Voto arrotondato per eccesso: {{Math.ceil(movie.vote_average / 2)}}
+      </div>
+
+      <div>
+        <i v-for="i in Math.ceil(movie.vote_average / 2)" :key="i" class="fa-solid fa-star"></i>
+        <i v-for="k in (5 - Math.ceil(movie.vote_average / 2))" :key="j" class="fa-regular fa-star"></i>
       </div>
 
       <div class="mt-3">
         Movie cover
-        <img class="posterPatth" :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" :alt="movie.poster_path">
+        <img class="posterPath" :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" :alt="movie.poster_path">
       </div>
     </li>
   </ul>
@@ -104,12 +113,12 @@ export default {
       </div>
     
       <div>
-        Vote average : {{ serie.vote_average }}
+        Voto arrotondato per eccesso: {{Math.ceil(serie.vote_average / 2)}}
       </div>
 
       <div class="mt-3">
         Series cover
-        <img class="posterPatth" :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" :alt="serie.poster_path">
+        <img class="posterPath" :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" :alt="serie.poster_path">
       </div>
     </li>
   </ul>
@@ -128,7 +137,8 @@ export default {
   }
 
 .posterPath{
-  height: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 
