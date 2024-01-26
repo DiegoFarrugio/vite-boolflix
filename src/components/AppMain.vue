@@ -31,7 +31,7 @@ export default {
 
       return finalLink;
     }
-  }
+  },
 }
 </script>
 
@@ -59,11 +59,16 @@ export default {
 
       <div>
         Flag: 
-          <img :src="flagNations(movie.original_language)" :alt="movie.original_language">
+          <img class="flag_nations " :src="flagNations(movie.original_language)" :alt="movie.original_language">
       </div>
     
       <div>
         Vote average : {{ movie.vote_average }}
+      </div>
+
+      <div class="mt-3">
+        Movie cover
+        <img class="posterPatth" :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" :alt="movie.poster_path">
       </div>
     </li>
   </ul>
@@ -95,11 +100,16 @@ export default {
 
       <div>
         Flag: 
-          <img :src="flagNations(serie.original_language)" :alt="serie.original_language">
+          <img class="flag_nations" :src="flagNations(serie.original_language)" :alt="serie.original_language">
       </div>
     
       <div>
         Vote average : {{ serie.vote_average }}
+      </div>
+
+      <div class="mt-3">
+        Series cover
+        <img class="posterPatth" :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" :alt="serie.poster_path">
       </div>
     </li>
   </ul>
@@ -113,8 +123,13 @@ export default {
 
 <style lang="scss" scoped>
 
-  img{
+  .flag_nations{
     height: 40px;
   }
+
+.posterPath{
+  height: 10px;
+}
+
 
 </style>
